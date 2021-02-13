@@ -3,15 +3,24 @@ clear all
 close all
 
 % fft example
-n = [0:9];
-x = [1, 1, 1, 0, 0, 0, 0, 0, 1, 1];
-% x = sin( ((2*pi)*(3/10)).*n );
-% stem(n, x);               % This is to plot the signal and check if it is periodic
+n = [-49:1:50];
+x = ((1/2).^abs(n)).*(cos(pi*(n-1)/8));
+omega = linspace(-pi, pi, 60);
 N = length(x);
-c = fft(x)/N;
-stem(n, c);               % This is to plot the DTFS
-subplot(1, 2, 1)
-stem(n, abs(c) );
-subplot(1, 2, 2)
-stem(n, angle(c) );
+
+% Analysis Formula
+% Find the Fourier Transform of signal "for discrete series divide by /N" 
+% c = fft(x)/N;
+% Synthesis Formula
+% This is to find the inverse Fourier Transform "for discrete series multiply by *N"
+% x = ifft(c)*N;
+
+
+subplot(2, 2, [1,2])        % This is a plot of the original signal
+stem(n, x, 'b');            % This is a plot of the original signal
+subplot(2, 2, 3)            % This is the magnitude plot
+plot(abs(c), 'r' );         % This is the magnitude plot
+subplot(2, 2, 4)            % This is the phase plot
+plot(angle(c), 'g' );       % This is the phase plot
+% stem(n, c);                 % This is to plot the DTFS
 
