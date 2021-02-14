@@ -161,13 +161,30 @@ close all
 
 
 
-% % my code for Problem  #14 part(a)
-omega = -pi:(pi/100000):pi;
-X1 = ((cos(omega)).^2) + ((sin(3.*omega)).^2);
+% % % my code for Problem  #14 part(a)
+% omega = -pi:(pi/100):pi;
+% X1 = ((cos(omega)).^2) + ((sin(3.*omega)).^2);
+% X1_inverse = ifft(X1);
+% % plot(omega/pi, X1, 'r' );
+% stem(real(X1_inverse), 'r' );
+
+
+
+% % my code for Problem  #14 part(b)
+omega = -pi:(pi/100):pi;
+X1 = zeros(1, length(omega));
+for i = 1:length(omega)
+    if( omega(i)/pi >= -0.5 && omega(i)/pi <= 0 )
+        X1(i) = ( 1 - (2*(omega(i))/pi) );
+    elseif( omega(i)/pi > 0 && omega(i)/pi <= 0.5 )
+        X1(i) = ( 1 + (2*(omega(i))/pi) );
+    else
+        X1(i) = 0;
+    end
+end
 X1_inverse = ifft(X1);
 plot(omega/pi, X1, 'r' );
 % stem(real(X1_inverse), 'r' );
-
 
 
 
