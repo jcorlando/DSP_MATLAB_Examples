@@ -2,7 +2,7 @@ clc
 clear all
 close all
 
-% my code for Problem  #11 part(a)
+% % my code for Problem  #11 part(a)
 % N = 10;
 % n = 0:N-1;                                      % x1[n] has fandamental period 10
 % x = sin(2*pi*(3/10).*n);                        % x1[n] = sin[2?(3/10)n]
@@ -35,7 +35,7 @@ close all
 
 
 
-% my code for Problem  #11 part(b)
+% % my code for Problem  #11 part(b)
 % N = 6;
 % n = 0:N-1;                                      % x2[n] has fandamental period 6
 % x = [1, 2, -1, 0, -1, 2];                       % x2[n] = [1, 2, -1, 0, -1, 2]
@@ -101,7 +101,7 @@ close all
 
 
 
-% % my code for Problem  #11 part(d)
+% my code for Problem  #11 part(d)
 % N = 12;
 % n = 0:N-1;                                      % x4[n] has fandamental period 4
 % x = ( 1 - sin((pi.*n)/4) );                     % x4[n] = 1 - sin((pi.*n)/4)
@@ -133,7 +133,7 @@ close all
 
 
 
-% % my code for Problem  #13 part(a)
+% my code for Problem  #13 part(a)
 % n = -49:1:50;
 % x = ((1/2).^abs(n)).*(cos(pi*(n-1)/8));
 % omega = -pi:(pi/1000):pi;
@@ -161,16 +161,16 @@ close all
 
 
 
-% % my code for Problem  #14 part(a)
-% omega = -pi:(pi/100):pi;
+% my code for Problem  #14 part(a)
+% omega = -pi:(pi/10000):pi;
 % X1 = ((cos(omega)).^2) + ((sin(3.*omega)).^2);
 % X1_inverse = ifft(X1);
 % % plot(omega/pi, X1, 'r' );
 % stem(real(X1_inverse), 'r' );
+% xlim([-4 20])
 
 
-
-% % my code for Problem  #14 part(c)
+% my code for Problem  #14 part(c)
 % omega = -pi:(pi/41):pi;
 % X1 = zeros(1, length(omega));
 % for i = 1:length(omega)
@@ -184,42 +184,32 @@ close all
 % end
 % X1_inverse = ifft(X1);
 % plot(omega/pi, X1);
-% % stem(real(X1_inverse));
+% stem(real(X1_inverse));
+% xlim([-6 40]);
 
 
 
 
-% % my code for Problem  #48 part(b)
-% n = -10:60;
-% x = 2*(-0.8).^(n + 2).*(n >= 2);
-% omega = -pi:(pi/10000):pi;
-% X = exp(-j*omega'*n)*(x');
-% 
-% subplot(2, 2, [1,2])                                % This is a plot of the original signal
-% stem(n, x, 'b');                                    % This is a plot of the original signal
-% xlabel('n')
-% ylabel('x[n]')
-% title('x[n]')
-% 
-% subplot(2, 2, 3)                                    % This is the magnitude plot
-% plot( (omega/pi), abs(X), 'r' );                    % This is the magnitude plot
-% title('Magnitude response')
-% xlabel('w/pi')
-% ylabel('|X(e^jw)|')
-% 
-% subplot(2, 2, 4)                                        % This is the phase plot
-% plot((omega/pi), unwrap(angle(X)), 'g' );               % This is the phase plot
-% title('Phase response')
-% xlabel('w/pi')
-% ylabel('<X(e^jw)')
+% my code for Problem  #48 part(b)
+n = -10:60;
+x = 2*(-0.8).^(n + 2).*(n >= 2);
+omega = -pi:(pi/10000):pi;
+X = exp(-j*omega'*n)*(x');
 
+subplot(2, 2, [1,2])                                % This is a plot of the original signal
+stem(n, x, 'b');                                    % This is a plot of the original signal
+xlabel('n')
+ylabel('x[n]')
+title('x[n]')
 
+subplot(2, 2, 3)                                    % This is the magnitude plot
+plot( (omega/pi), abs(X), 'r' );                    % This is the magnitude plot
+title('Magnitude response')
+xlabel('w/pi')
+ylabel('|X(e^jw)|')
 
-
-
-
-
-
-
-
-
+subplot(2, 2, 4)                                        % This is the phase plot
+plot((omega/pi), unwrap(angle(X)), 'g' );               % This is the phase plot
+title('Phase response')
+xlabel('w/pi')
+ylabel('<X(e^jw)')
