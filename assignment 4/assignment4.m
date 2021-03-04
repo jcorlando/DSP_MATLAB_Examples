@@ -36,6 +36,29 @@ close all
 
 
 
+% Problem # 16 Part (c)
+% n=0:50;
+% x=(1/2).^n;                             % x[n]
+% b=[2 -2];                               % numerator coefficients of H(z)
+% a=[1 -1/3];                             % denominator coefgicients of H(z)
+% yc=filter(b,a,x)
+% yb=8.*(1/3).^n-6.*(0.5).^n              % y[n] determined analytically in part(b)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Problem # 19 Part (a)
+% b = [1, 0, 0, 0, 0, 0, 0, 0, 0, -(1/1024)];
+% a = [1, -(1/2)];
+% subplot(1, 2, 1)
+% zplane(b,a)
+% title('Pole Zero Pattern')
+% [h,t] = impz(b,a);
+% subplot(1, 2, 2)
+% stem(t,h);
+% title('Impulse Response')
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 
 
