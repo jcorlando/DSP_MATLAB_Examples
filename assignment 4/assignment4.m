@@ -16,12 +16,12 @@ close all
 % Code to determine the sequences corresponding
 % to the following z-transforms:
 
-% b = [1; -1];
-% a = [1; -(1/4)];
+% b = [1; -1];                        % Two ways of doing the same thing
+% a = [1; -(1/4)];                    % Two ways of doing the same thing
 % [residues, poles, directTerm] = residuez(b, a)
-%%% or this vvv
-% b = [0; 4; -4];
-% a = [4; -1; 0];
+% or this vvv                         Two ways of doing the same thing
+% b = [0; 4; -4];                     % Two ways of doing the same thing
+% a = [4; -1; 0];                     % Two ways of doing the same thing
 % [residues, poles, directTerm] = residue(b, a)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -48,15 +48,15 @@ close all
 
 
 % Problem # 19 Part (a)
-% b = [1, 0, 0, 0, 0, 0, 0, 0, 0, -(1/1024)];
-% a = [1, -(1/2)];
-% subplot(1, 2, 1)
-% zplane(b,a)
-% title('Pole Zero Pattern')
-% [h,t] = impz(b,a);
-% subplot(1, 2, 2)
-% stem(t,h);
-% title('Impulse Response')
+b = [1, 0, 0, 0, 0, 0, 0, 0, 0, -(1/1024)];
+a = [1, -(1/2)];
+subplot(1, 2, 1)
+zplane(b,a)
+title('Pole Zero Pattern')
+[h,t] = impz(b,a);
+subplot(1, 2, 2)
+stem(t,h);
+title('Impulse Response')
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
