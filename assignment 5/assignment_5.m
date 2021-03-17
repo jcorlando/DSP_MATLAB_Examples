@@ -57,17 +57,42 @@ close all
 
 
 % Problem # 18 Part (b)
-n = -pi:pi/1000:pi;
-b = [3.125 0 2];
-a = [1 -0.9 0.81];
-[h, w] = freqz(b, a, n);
-subplot(1, 2, 1);
-plot( w/pi, (abs(h)) );
-title('Magnitude Response of H_m_i_n(z)');
-subplot(1, 2, 2);
-plot( w/pi, unwrap(angle(h)) );
-title('Phase Response of H_m_i_n(z)');
+% n = -pi:pi/1000:pi;
+% b = [3.125 0 2];
+% a = [1 -0.9 0.81];
+% [h, w] = freqz(b, a, n);
+% subplot(1, 2, 1);
+% plot( w/pi, (abs(h)) );
+% title('Magnitude Response of H_m_i_n(z)');
+% subplot(1, 2, 2);
+% plot( w/pi, unwrap(angle(h)) );
+% title('Phase Response of H_m_i_n(z)');
 
+
+% Problem # 18 Part (c)
+% n = -pi:pi/1000:pi;
+% b = [1 -0.9 0.81];
+% a = [3.125 0 2];
+% [h, w] = freqz(b, a, n);
+% subplot(1, 2, 1);
+% plot( w/pi, (abs(h)).*(abs(h2)) );
+% title('Magnitude Response of H_m_i_n(z)');
+% subplot(1, 2, 2);
+% plot( w/pi, unwrap(angle(h)) );
+% title('Phase Response of H_m_i_n(z)');
+
+
+% Problem # 20 Part (a)
+% n = -pi:pi/1000:pi;
+% b = [1 -0.9 0.81];
+% a = [3.125 0 2];
+% [h, w] = freqz(b, a, n);
+% subplot(1, 2, 1);
+% plot( w/pi, (abs(h)).*(abs(h2)) );
+% title('Magnitude Response of H_m_i_n(z)');
+% subplot(1, 2, 2);
+% plot( w/pi, unwrap(angle(h)) );
+% title('Phase Response of H_m_i_n(z)');
 
 
 
