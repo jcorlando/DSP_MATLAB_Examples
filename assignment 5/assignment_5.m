@@ -83,17 +83,37 @@ close all
 
 
 % Problem # 20 Part (a)
-% n = -pi:pi/1000:pi;
-% b = [1 -0.9 0.81];
-% a = [3.125 0 2];
+% n = 4:35;
+% h_n = 0.8.^(n - 4);
+% stem(n, h_n, 'filled');
+% title('Verified Impulse Response h[n] using D=4 and a=0.8');
+
+
+% Problem # 20 Part (b)
+% n = 0:pi/1000:2*pi;
+% b = [0 0 0 0 1];
+% a = [1 0 0 0 -0.8];
+% [h, w] = freqz(b, a, n);
+% plot( w/pi, (abs(h)) );
+% title('Magnitude Response Showing 4 peaks and 4 dips over 0 < w < 2*pi');
+
+
+% Problem # 20 Part (c)
+% n = 0:pi/1000:2*pi;
+% b = [0 0 0 0 1];
+% a = [1 0 0 0 -0.8];
+% n = 0:100;
+% h_n_1 = 0.9.^(n - 5);
+% h_n_2 = -0.8.^(n - 8);
+% stem(h_n_1, 'filled');
+% hold on
+% stem(h_n_2, 'r');
+% hold off
 % [h, w] = freqz(b, a, n);
 % subplot(1, 2, 1);
-% plot( w/pi, (abs(h)).*(abs(h2)) );
-% title('Magnitude Response of H_m_i_n(z)');
+% plot( w/pi, (abs(h)) );
+% title('');
 % subplot(1, 2, 2);
-% plot( w/pi, unwrap(angle(h)) );
-% title('Phase Response of H_m_i_n(z)');
-
 
 
 
