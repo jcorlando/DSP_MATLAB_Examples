@@ -99,30 +99,63 @@ close all
 
 
 % Problem # 20 Part (c)
-n_1 = 5:50;
-n_2 = 8:50;
-h_n_1 = 0.9.^(n_1 - 5);
-h_n_2 = -0.8.^(n_2 - 8);
-subplot(1, 2, 1);
-stem(n_1, h_n_1, 'filled');
-hold on
-stem(n_2, h_n_2, 'filled', 'r');
-title('Impulse Response for D=5, a=0.9 (Blue) and D=8, a=-0.8 (Red)');
-hold off
-n = 0:pi/1000:2*pi;
-b_1 = [0 0 0 0 0 1];
-a_1 = [1 0 0 0 0 0.9];
-[h_1, w_1] = freqz(b_1, a_1, n);
-subplot(1, 2, 2);
-plot( w_1/pi, (abs(h_1)) );
-hold on
-b_2 = [0 0 0 0 0 0 0 0 1];
-a_2 = [1 0 0 0 0 0 0 0 -0.8];
-[h_2, w_2] = freqz(b_2, a_2, n);
-subplot(1, 2, 2);
-plot( w_2/pi, (abs(h_2)) );
-title('Magnitude Response for D=5, a=0.9 (Blue) and D=8, a=-0.8 (Red)');
-hold off
+% n_1 = 5:50;
+% n_2 = 8:50;
+% h_n_1 = 0.9.^(n_1 - 5);
+% h_n_2 = -0.8.^(n_2 - 8);
+% subplot(1, 2, 1);
+% stem(n_1, h_n_1, 'filled');
+% hold on
+% stem(n_2, h_n_2, 'filled', 'r');
+% title('Impulse Response for D=5, a=0.9 (Blue) and D=8, a=-0.8 (Red)');
+% hold off
+% n = 0:pi/1000:2*pi;
+% b_1 = [0 0 0 0 0 1];
+% a_1 = [1 0 0 0 0 0.9];
+% [h_1, w_1] = freqz(b_1, a_1, n);
+% subplot(1, 2, 2);
+% plot( w_1/pi, (abs(h_1)) );
+% hold on
+% b_2 = [0 0 0 0 0 0 0 0 1];
+% a_2 = [1 0 0 0 0 0 0 0 -0.8];
+% [h_2, w_2] = freqz(b_2, a_2, n);
+% subplot(1, 2, 2);
+% plot( w_2/pi, (abs(h_2)) );
+% title('Magnitude Response for D=5, a=0.9 (Blue) and D=8, a=-0.8 (Red)');
+% hold off
+
+
+% Problem #23 part b
+% n = -pi:pi/1000:pi;
+% [h, w] = freqz( [0.1703], [1 -0.8 0.81], n );
+% plot( n/pi, abs(h) );
+% title('Magnitude Plot with |b| = 0.1703');
+
+
+% Problem #23 part c
+% n = -pi:pi/1000:pi;
+% [h, w] = freqz( [0.1703], [1 -0.8 0.81], n );
+% plot( n/pi, angle(h), 'b' );
+% title('Wrapped (Blue Line) and Unwrapped (Green dashes) Phase Response for part (b)');
+% hold on
+% plot( n/pi, unwrap(angle(h)), 'g--' );
+% hold off
+
+
+% Problem #23 part e
+% n = 0:1000;
+% x = 2*cos(((pi/3).*n) + pi/4);
+% y = filter( [0.1703], [1 -0.8 0.81], x);
+% stem(x, 'filled');
+% hold on;
+% stem(y, 'filled');
+% title('Input x[n] Blue and Steady State Response y[n] Orange');
+
+
+
+
+
+
 
 
 
