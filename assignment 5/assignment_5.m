@@ -169,24 +169,19 @@ close all
 % title('respone of system in part (a) to input x');
 
 
-% Problem # 30 part (b)
-n = 0:60;
-x = sin(0.1*pi*n) + (1/3)*sin(0.3*pi*n) + (1/5)*sin(0.5*pi*n);
 
-% filter coefficiets
-H = [1 -2 3 -4 0 4 -3 2 -1];
-figure;
-freqz(H);
-title('frequency response of system (a)')
-% Filter the signal
-y = filter(H, 1, x); % filter the signal x with system (a)
-% Plot the input and outputs
-figure;
-subplot(2, 1, 1);
-plot(n, x);
-grid on;
-title('input');
-subplot(2, 1, 2);
-plot(n, y);
-grid on;
-title('respone of system in part (a) to input x');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
