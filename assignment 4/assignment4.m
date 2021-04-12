@@ -48,16 +48,32 @@ close all
 
 
 % Problem # 19 Part (a)
-b = [1, 0, 0, 0, 0, 0, 0, 0, 0, -(1/1024)];
-a = [1, -(1/2)];
-subplot(1, 2, 1)
-zplane(b,a)
-title('Pole Zero Pattern')
-[h,t] = impz(b,a);
-subplot(1, 2, 2)
-stem(t,h);
-title('Impulse Response')
+% b = [1, 0, 0, 0, 0, 0, 0, 0, 0, -(1/1024)];
+% a = [1, -(1/2)];
+% subplot(1, 2, 1)
+% zplane(b,a)
+% title('Pole Zero Pattern')
+% [h,t] = impz(b,a);
+% subplot(1, 2, 2)
+% stem(t,h);
+% title('Impulse Response')
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
 
 
 

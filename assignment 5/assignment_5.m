@@ -138,10 +138,10 @@ close all
 
 
 % Problem #23 part e
-% n = 0:1000;
+% n = 0:300;
 % x = 2*cos(((pi/3).*n) + pi/4);
 % y = filter( [0.1703], [1 -0.8 0.81], x);
-% stem(x, 'filled');
+% stem(x);
 % hold on;
 % stem(y, 'filled');
 % title('Input x[n] Blue and Steady State Response y[n] Orange');
@@ -166,22 +166,6 @@ close all
 % subplot(2, 1, 2);
 % plot(n, y);
 % grid on;
-% title('respone of system in part (a) to input x');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+% title('response of system in part (a) to input x');
 
 
