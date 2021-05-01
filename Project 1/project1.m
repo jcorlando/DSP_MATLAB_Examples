@@ -47,6 +47,30 @@ close all;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  Part 3
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% load('signal.mat');
+% Ts = 0.01;
+% fs = 1/Ts;
+% for i=481:600    % <--- for loop to replace last 120 with zeros
+%     z(i, 2) = 0; % <--- Replace with zeros
+% end
+% 
+% figure();
+% plot(z(:,1), z(:,2));
+% title('Time  Domain  Signal  with  Last 120 Samples Replaced With Zeros(0)');
+% y = fft(z(:,2));
+% n = length(z(:,2));
+% fshift = (-n/2:(n/2)-1)*(fs/n);
+% yshift = fftshift(y);
+% figure();
+% stem(fshift, abs(yshift));
+% title('Magnitude Spectrum with Spectral Leakage');
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Part 3
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Part 4
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 load('signal.mat');
 Ts = 0.01;
 fs = 1/Ts;
@@ -54,19 +78,9 @@ for i=481:600    % <--- for loop to replace last 120 with zeros
     z(i, 2) = 0; % <--- Replace with zeros
 end
 
+[c, lags] = xcorr(z(:,2), 'unbiased');
 figure();
-plot(z(:,1), z(:,2));
-title('Time  Domain  Signal  with  Last 120 Samples Replaced With Zeros(0)');
-y = fft(z(:,2));
-n = length(z(:,2));
-fshift = (-n/2:(n/2)-1)*(fs/n);
-yshift = fftshift(y);
-figure();
-stem(fshift, abs(yshift));
-title('Magnitude Spectrum with Spectral Leakage');
+stem(lags(600:1199)*Ts, c(600:1199));
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%  Part 3
+%  Part 4
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
