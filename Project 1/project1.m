@@ -71,22 +71,22 @@ close all;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  Part 4
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-load('signal.mat');
-Ts = 0.01;
-fs = 1/Ts;
-for i=481:600    % <--- for loop to replace last 120 with zeros
-    z(i, 2) = 0; % <--- Replace with zeros
-end
-
-[c, lags] = xcorr(z(:,2));
-figure();
-stem(lags(600:1199)*Ts, c(600:1199));
-title('Autocorrelation of Signal');
-
-[c, lags] = xcorr(z(:,2), 'unbiased');
-figure();
-stem(lags(600:1199)*Ts, c(600:1199));
-title('Unbiased Autocorrelation of Signal');
+% load('signal.mat');
+% Ts = 0.01;
+% fs = 1/Ts;
+% for i=481:600    % <--- for loop to replace last 120 with zeros
+%     z(i, 2) = 0; % <--- Replace with zeros
+% end
+% 
+% [c, lags] = xcorr(z(:,2));
+% figure();
+% stem(lags(600:1199)*Ts, c(600:1199));
+% title('Autocorrelation of Signal');
+% 
+% [c, lags] = xcorr(z(:,2), 'unbiased');
+% figure();
+% stem(lags(600:1199)*Ts, c(600:1199));
+% title('Unbiased Autocorrelation of Signal');
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  Part 4
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
