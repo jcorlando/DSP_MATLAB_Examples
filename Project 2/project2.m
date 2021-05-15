@@ -46,13 +46,16 @@ N = 700;
 h = fir1(N, wn, 'stop');
 [H, w] = freqz(h, 1);
 figure();
-% subplot(2, 1, 1);
+subplot(2, 1, 1);
 plot(w*fs/(2*pi), 20*log10(abs(H)));
 title('Frequency Response');
 xlabel('frequency (Hz)');
 ylabel('Magnitude Response (dB)');
 axis([0, fs/2, -80, 5]);
-
+subplot(2, 1, 2);
+plot(w*fs/(2*pi), unwrap(angle(H)));
+xlabel('frequency (Hz)');
+ylabel('Phase Response (Radians)');
 % Impulse Response of filter 1
 
 
