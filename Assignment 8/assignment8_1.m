@@ -38,9 +38,9 @@ h = hd.*hamming(M+1);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Part (b) Uncomment for Part (b) only
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% [M, wn, beta, ftype] = kaiserord([0.3 0.5], ...
-%     [1 0], [delta_s, delta_p]);
-% h = fir1(M, wn, ftype, kaiser(M + 1, beta));
+[M, wn, beta, ftype] = kaiserord([0.3 0.5], ...
+    [1 0], [delta_s, delta_p]);
+h = fir1(M, wn, ftype, kaiser(M + 1, beta));
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Part (b) Uncomment for Part (b) only
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -78,20 +78,21 @@ error(ind) = Ha(ind);
 magz2(ind) = H_db(ind);
 
 % PLot all variables
-figure();
+subplot(2, 2, 1);
 stem(0:M, h, 'filled');
 title('Impulse Response')
-figure();
+subplot(2, 2, 2);
 plot(w/pi, H_db);
 title('Magnitude Response in decibles (dB)')
-figure();
+subplot(2, 2, 3);
 plot(w/pi, error);
 title('Approximation Error')
-figure();
+subplot(2, 2, 4);
 yyaxis left
 plot(w/pi, magz1)
 yyaxis right
 plot(w/pi, magz2)
 title('Zoom of Magnitude Response (dB)')
+sgtitle('Plots Using the Kaiser Window')
 
 
